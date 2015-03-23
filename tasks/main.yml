@@ -1,5 +1,2 @@
 ---
 # tasks file for common
-
-- name: Set the hostname
-  hostname: name={{ hostname }}
