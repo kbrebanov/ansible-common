@@ -124,6 +124,8 @@ dependencies:
                          resolv_conf_search_domains: [ "{{ domain }}" ] }
   - { role: iptables }
   - { role: apparmor }
+  - { role: motd, motd_ascii_logo: "{{ motd_ascii_logo }}",
+                  motd_message: "{{ motd_message }}" }
   - { role: openssh }
   - { role: man }
   - { role: ntp }
