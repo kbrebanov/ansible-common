@@ -123,6 +123,7 @@ dependencies:
   - { role: resolv_conf, resolv_conf_nameservers: "{{ dns_servers }}",
                          resolv_conf_search_domains: [ "{{ domain }}" ] }
   - { role: iptables }
+  - { role: apparmor }
   - { role: openssh }
   - { role: man }
   - { role: ntp }
