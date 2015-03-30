@@ -127,6 +127,7 @@ dependencies:
   - { role: motd, motd_ascii_logo: "{{ motd_ascii_logo }}",
                   motd_message: "{{ motd_message }}" }
   - { role: rsyslog }
+  - { role: sudo }
   - { role: openssh }
   - { role: man }
   - { role: ntp }
