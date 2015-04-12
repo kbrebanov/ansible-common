@@ -1,5 +1,5 @@
 ---
 # vars file for common
 
-common_hostname: "{{ fqdn.split('.')[0] }}"
-common_domain: "{{ '.'.join(fqdn.split('.')[1:]) }}"
+common_hostname: "{{ common_fqdn.split('.')[0] }}"
+common_domain: "{{ '.'.join(common_fqdn.split('.')[1:]) }}"
