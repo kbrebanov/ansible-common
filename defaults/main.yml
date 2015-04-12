@@ -10,4 +10,4 @@ common_iptables_rules:
 common_dns_servers:
   - 8.8.8.8
 common_motd_ascii_logo: ""
-common_motd_message: "Welcome to {{ fqdn }}"
+common_motd_message: "Welcome to {{ common_fqdn }}"
