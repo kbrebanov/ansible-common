@@ -117,6 +117,7 @@ galaxy_info:
   - system
   #- web
 dependencies:
+  - { role: kbrebanov.selinux }
   - { role: kbrebanov.hostname, hostname_name: "{{ common_hostname }}" }
   - { role: kbrebanov.hosts_file, hosts_file_local_fqdn: "{{ common_fqdn }}",
                                   hosts_file_local_hostname: "{{ common_hostname }}" }
