@@ -3,6 +3,11 @@
 
 common_fqdn: localhost.localdomain
 common_hostname: "{{ fqdn.split('.')[0] }}"
+common_iptables_rules:
+  - protocol: tcp
+    source_addresses: 0.0.0.0/0
+    port: 22
+    comment: "OpenSSH"
 common_domain: "{{ '.'.join(fqdn.split('.')[1:]) }}"
 common_dns_servers:
   - 8.8.8.8
