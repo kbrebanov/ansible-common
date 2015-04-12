@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Kevin Brebanov
-  description: Configures common settings.
+  description: Wrapper for common roles and settings.
   company:
   # Some suggested licenses:
   # - BSD (default)
