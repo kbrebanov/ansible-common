@@ -1,10 +1,10 @@
 ---
 # defaults file for common
 
-fqdn: localhost.localdomain
-hostname: "{{ fqdn.split('.')[0] }}"
-domain: "{{ '.'.join(fqdn.split('.')[1:]) }}"
-dns_servers:
+common_fqdn: localhost.localdomain
+common_hostname: "{{ fqdn.split('.')[0] }}"
+common_domain: "{{ '.'.join(fqdn.split('.')[1:]) }}"
+common_dns_servers:
   - 8.8.8.8
-motd_ascii_logo: ""
-motd_message: "Welcome to {{ fqdn }}"
+common_motd_ascii_logo: ""
+common_motd_message: "Welcome to {{ fqdn }}"

@@ -117,15 +117,15 @@ galaxy_info:
   - system
   #- web
 dependencies:
-  - { role: kbrebanov.hostname }
-  - { role: kbrebanov.hosts_file, hosts_file_local_fqdn: "{{ fqdn }}",
-                                  hosts_file_local_hostname: "{{ hostname }}" }
-  - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: "{{ dns_servers }}",
-                                   resolv_conf_search_domains: [ "{{ domain }}" ] }
+  - { role: kbrebanov.hostname, hostname_name: "{{ common_hostname }}" }
+  - { role: kbrebanov.hosts_file, hosts_file_local_fqdn: "{{ common_fqdn }}",
+                                  hosts_file_local_hostname: "{{ common_hostname }}" }
+  - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: "{{ common_dns_servers }}",
+                                   resolv_conf_search_domains: [ "{{ common_domain }}" ] }
   - { role: kbrebanov.iptables }
   - { role: kbrebanov.apparmor }
-  - { role: kbrebanov.motd, motd_ascii_logo: "{{ motd_ascii_logo }}",
-                            motd_message: "{{ motd_message }}" }
+  - { role: kbrebanov.motd, motd_ascii_logo: "{{ common_motd_ascii_logo }}",
+                            motd_message: "{{ common_motd_message }}" }
   - { role: kbrebanov.rsyslog }
   - { role: kbrebanov.sudo }
   - { role: kbrebanov.openssh }
