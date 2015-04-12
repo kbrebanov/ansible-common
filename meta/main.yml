@@ -118,20 +118,20 @@ galaxy_info:
   #- web
 dependencies:
   - { role: kbrebanov.selinux }
+  - { role: kbrebanov.apparmor }
   - { role: kbrebanov.hostname, hostname_name: "{{ common_hostname }}" }
   - { role: kbrebanov.hosts_file, hosts_file_local_fqdn: "{{ common_fqdn }}",
                                   hosts_file_local_hostname: "{{ common_hostname }}" }
   - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: "{{ common_dns_servers }}",
                                    resolv_conf_search_domains: [ "{{ common_domain }}" ] }
   - { role: kbrebanov.iptables, iptables_rules: {{ common_iptables_rules }} }
-  - { role: kbrebanov.apparmor }
   - { role: kbrebanov.motd, motd_ascii_logo: "{{ common_motd_ascii_logo }}",
                             motd_message: "{{ common_motd_message }}" }
+  - { role: kbrebanov.ntp }
   - { role: kbrebanov.rsyslog }
   - { role: kbrebanov.sudo }
   - { role: kbrebanov.openssh }
   - { role: kbrebanov.man }
-  - { role: kbrebanov.ntp }
   - { role: kbrebanov.unzip }
   - { role: kbrebanov.zip }
   # List your role dependencies here, one per line. Only
