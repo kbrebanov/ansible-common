@@ -124,7 +124,7 @@ dependencies:
                                   hosts_file_local_hostname: "{{ common_hostname }}" }
   - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: "{{ common_dns_servers }}",
                                    resolv_conf_search_domains: [ "{{ common_domain }}" ] }
-  - { role: kbrebanov.iptables, iptables_rules: {{ common_iptables_rules }} }
+  - { role: kbrebanov.iptables, iptables_rules: "{{ common_iptables_rules }}" }
   - { role: kbrebanov.motd, motd_ascii_logo: "{{ common_motd_ascii_logo }}",
                             motd_message: "{{ common_motd_message }}" }
   - { role: kbrebanov.ntp }
