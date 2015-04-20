@@ -127,6 +127,7 @@ dependencies:
   - { role: kbrebanov.iptables, iptables_rules: "{{ common_iptables_rules }}" }
   - { role: kbrebanov.motd, motd_ascii_logo: "{{ common_motd_ascii_logo }}",
                             motd_message: "{{ common_motd_message }}" }
+  - { role: kbrebanov.timezone, timezone_name: America/Montreal }
   - { role: kbrebanov.ntp }
   - { role: kbrebanov.rsyslog }
   - { role: kbrebanov.sudo }
