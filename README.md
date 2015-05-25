@@ -1,7 +1,7 @@
 common
 ======
 
-Wrapper for common roles and settings.
+Wrapper for common roles.
 
 Requirements
 ------------
@@ -11,13 +11,7 @@ This role requires Ansible 1.4 or higher.
 Role Variables
 --------------
 
-| Name                   | Default                                                                      | Description                 |
-|------------------------|------------------------------------------------------------------------------|-----------------------------|
-| common_fqdn            | localhost.localdomain                                                        | Fully qualified domain name |
-| common_iptables_rules  | [{protocol: tcp, source_addresses: 0.0.0.0/0, port: 22, comment: "OpenSSH"}] | Firewall rules              |
-| common_dns_servers     | ['8.8.8.8']                                                                  | DNS servers                 |
-| common_motd_ascii_logo | ""                                                                           | MOTD ASCII logo             |
-| common_motd_message    |"Welcome to {{ fqdn }}"                                                       | MOTD welcome message        |
+None
 
 Dependencies
 ------------
@@ -29,29 +23,50 @@ kbrebanov.hosts_file
 kbrebanov.resolv_conf
 kbrebanov.iptables
 kbrebanov.motd
+kbrebanov.timezone
 kbrebanov.ntp
 kbrebanov.rsyslog
+kbrebanov.rsync
 kbrebanov.sudo
 kbrebanov.openssh
 kbrebanov.man
 kbrebanov.unzip
 kbrebanov.zip
+kbrebanov.open_vm_tools
 
 Example Playbook
 ----------------
 
-Install common roles with default settings
+Install common roles
 ```
 - hosts: all
   roles:
     - { role: kbrebanov.common }
 ```
 
-Install common roles specyfing a FQDN
+Install common roles specifying some variables
 ```
 - hosts: all
+  vars:
+    hostname_name: test-server
+    domain_name: example.com
+    hosts_file_local_fqdn: "{{ hostname_name }}.{{ domain_name }}"
+    hosts_file_local_hostname: "{{ hostname_name }}"
+    resolv_conf_nameservers:
+      - "8.8.8.8"
+      - "8.8.4.4"
+    resolv_conf_search_domains:
+      - "{{ domain_name }}"
+    motd_message: "Welcome to {{ hostname_name }}.{{ domain_name }}"
+    iptables_icmp_enabled: true
+    iptables_rules:
+      - protocol: tcp
+        source_addresses: 0.0.0.0/0
+        port: 22
+        comment: "OpenSSH"
+    timezone_name: "America/Toronto"
   roles:
-    - { role: kbrebanov.common, common_fqdn: host1.example.com }
+    - { role: kbrebanov.common }
 ```
 
 License

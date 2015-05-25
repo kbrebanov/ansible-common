@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Kevin Brebanov
-  description: Wrapper for common roles and settings.
+  description: Wrapper for common roles.
   company:
   # Some suggested licenses:
   # - BSD (default)
@@ -119,15 +119,12 @@ galaxy_info:
 dependencies:
   - { role: kbrebanov.selinux }
   - { role: kbrebanov.apparmor }
-  - { role: kbrebanov.hostname, hostname_name: "{{ common_hostname }}" }
-  - { role: kbrebanov.hosts_file, hosts_file_local_fqdn: "{{ common_fqdn }}",
-                                  hosts_file_local_hostname: "{{ common_hostname }}" }
-  - { role: kbrebanov.resolv_conf, resolv_conf_nameservers: "{{ common_dns_servers }}",
-                                   resolv_conf_search_domains: [ "{{ common_domain }}" ] }
-  - { role: kbrebanov.iptables, iptables_rules: "{{ common_iptables_rules }}" }
-  - { role: kbrebanov.motd, motd_ascii_logo: "{{ common_motd_ascii_logo }}",
-                            motd_message: "{{ common_motd_message }}" }
-  - { role: kbrebanov.timezone, timezone_name: America/Montreal }
+  - { role: kbrebanov.hostname }
+  - { role: kbrebanov.hosts_file }
+  - { role: kbrebanov.resolv_conf }
+  - { role: kbrebanov.iptables }
+  - { role: kbrebanov.motd }
+  - { role: kbrebanov.timezone }
   - { role: kbrebanov.ntp }
   - { role: kbrebanov.rsyslog }
   - { role: kbrebanov.sudo }
