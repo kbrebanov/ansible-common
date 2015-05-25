@@ -1,6 +1,8 @@
 common
 ======
 
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-kbrebanov.common-660198.svg)](https://galaxy.ansible.com/list#/roles/3927)
+
 Wrapper for common roles.
 
 Requirements
