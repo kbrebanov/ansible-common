@@ -18,23 +18,23 @@ None
 Dependencies
 ------------
 
-kbrebanov.selinux
-kbrebanov.apparmor
-kbrebanov.hostname
-kbrebanov.hosts_file
-kbrebanov.resolv_conf
-kbrebanov.iptables
-kbrebanov.motd
-kbrebanov.timezone
-kbrebanov.ntp
-kbrebanov.rsyslog
-kbrebanov.rsync
-kbrebanov.sudo
-kbrebanov.openssh
-kbrebanov.man
-kbrebanov.unzip
-kbrebanov.zip
-kbrebanov.open_vm_tools
+- kbrebanov.selinux
+- kbrebanov.apparmor
+- kbrebanov.hostname
+- kbrebanov.hosts_file
+- kbrebanov.resolv_conf
+- kbrebanov.iptables
+- kbrebanov.motd
+- kbrebanov.timezone
+- kbrebanov.ntp
+- kbrebanov.rsyslog
+- kbrebanov.rsync
+- kbrebanov.sudo
+- kbrebanov.openssh
+- kbrebanov.man
+- kbrebanov.unzip
+- kbrebanov.zip
+- kbrebanov.open_vm_tools
 
 Example Playbook
 ----------------
